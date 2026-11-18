@@ -17,6 +17,9 @@ class ASRProvider(ASRProviderBase):
         self.api_url = config.get("base_url")
         self.model = config.get("model_name")        
         self.output_dir = config.get("output_dir")
+        # Optional ISO-639-1 code (e.g. "es"). Without it Whisper auto-detects the language,
+        # which misfires on short or noisy clips.
+        self.language = config.get("language")
         self.delete_audio_file = delete_audio_file
 
         os.makedirs(self.output_dir, exist_ok=True)
@@ -40,6 +43,8 @@ class ASRProvider(ASRProviderBase):
             data = {
                 "model": self.model
             }
+            if self.language:
+                data["language"] = self.language
 
 
             with open(file_path, "rb") as audio_file:  # 使用with语句确保文件关闭
