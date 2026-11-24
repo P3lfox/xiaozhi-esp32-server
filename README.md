@@ -11,6 +11,8 @@
   (La Gaceta, Infobae, La Nación, Clarín, Ámbito, Perfil, Olé, or a national mix).
 - **`get_exchange_rates` tool**: Argentine peso quotes (official, blue, MEP, CCL, crypto, and other currencies) via dolarapi.com.
 
+See [docs/networking-guide.md](docs/networking-guide.md) to connect the board on a home router or a phone hotspot.
+
 Tools live in `main/xiaozhi-server/plugins_func/functions/` and are enabled through
 `Intent.function_call.functions` in `data/.config.yaml`.
 
