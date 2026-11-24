@@ -1,3 +1,24 @@
+> **Fork notice:** this is a personal fork of [xinnan-tech/xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server) (MIT License).
+> The `develop` branch holds my changes on top of upstream; `main` mirrors upstream.
+> The original README continues below.
+
+## What this fork adds
+
+- **Forced transcription language** for OpenAI-compatible ASR providers (used with Groq Whisper in Spanish).
+- **`get_local_weather` tool**: current weather and 3-day forecast from Open-Meteo (no API key),
+  defaulting to a configurable home city.
+- **`get_news` tool**: latest headlines from Argentine newspapers via RSS
+  (La Gaceta, Infobae, La Nación, Clarín, Ámbito, Perfil, Olé, or a national mix).
+- **`get_exchange_rates` tool**: Argentine peso quotes (official, blue, MEP, CCL, crypto, and other currencies) via dolarapi.com.
+
+Tools live in `main/xiaozhi-server/plugins_func/functions/` and are enabled through
+`Intent.function_call.functions` in `data/.config.yaml`.
+
+The matching firmware (animated eyes for the Waveshare ESP32-S3-Touch-LCD-3.49) lives in
+[P3lfox/xiaozhi-esp32](https://github.com/P3lfox/xiaozhi-esp32).
+
+---
+
 [![Banners](docs/images/banner1.png)](https://github.com/xinnan-tech/xiaozhi-esp32-server)
 
 <h1 align="center">小智后端服务xiaozhi-esp32-server</h1>
